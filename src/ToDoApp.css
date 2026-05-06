@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+:root {
+  --bg-primary: #b9b9dd;
+  --bg-secondary: #aaaad6;
+  --bg-accent: #8e83c7;
+  --color-primary: #807aff;
+  --color-secondary: #908af8;
+  --color-accent: #a09af1;
+  --border: #4f4f4f;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 20px 10px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(3rem, 7vw, 4rem);
+  color: #fff;
+  margin-bottom: 20px;
+}
+h1::before {
+  content: "📎";
+  margin-right: 10px;
+}
+/* Main container*/
+.container {
+  background-color: var(--bg-secondary);
+  width: 100%;
+  padding: 10px 10px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+}
+.container > form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background-color: var(--bg-primary);
+  border-radius: 10px;
+}
+.container .input-container {
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  text-wrap: wrap;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.input-container:focus {
+  border-color: var(--bg-accent);
+  box-shadow: 0 0 8px rgba(157, 97, 254, 0.638);
+}
+
+.container .add-btn {
+  background-color: var(--bg-accent);
+  border: none;
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+.add-btn:hover {
+  background-color: var(--color-accent);
+}
+.add-btn:active {
+  background-color: var(--color-primary);
+}
+/* task ul*/
+.task-container {
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+.task-container li {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  background-color: var(--bg-primary);
+  padding: 10px;
+  gap: 15px;
+  border-radius: 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  list-style: none;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.task-container li::first-letter {
+  text-transform: uppercase;
+}
+.task-container .completed {
+  text-decoration: line-through;
+  color: #ececec;
+}
+.delete-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  height: fit-content;
+  align-self: center;
+  background-color: #dc0a0a;
+  border: none;
+  width: 25%;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+.delete-btn:hover {
+  background-color: #ff4040;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 650px;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    margin: 40px;
+  }
+  .container {
+    max-width: 750px;
+  }
+}
